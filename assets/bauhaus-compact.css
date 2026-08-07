@@ -2137,6 +2137,98 @@ label:has(input:focus-visible) {
   }
 }
 
+/* Keep the full curriculum visually consistent with desktop on phones. */
+@media (max-width: 780px) {
+  .program-summary {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .program-summary p {
+    min-height: 92px;
+    padding: 14px 12px;
+    border-right: 1px solid var(--line);
+    border-bottom: 0;
+  }
+
+  .program-summary p:last-child {
+    border-right: 0;
+  }
+
+  .program-summary b {
+    font-size: 15px;
+    line-height: 1.2;
+  }
+
+  .program-summary span {
+    font-size: 10px;
+    line-height: 1.35;
+  }
+
+  .program-module > summary {
+    grid-template-columns: 56px minmax(0, 1fr) 34px;
+    grid-template-rows: auto auto;
+    align-items: center;
+  }
+
+  .module-level {
+    grid-row: 1 / span 2;
+  }
+
+  .module-heading {
+    display: contents;
+  }
+
+  .module-heading small {
+    grid-column: 2;
+    grid-row: 1;
+    margin: 0;
+  }
+
+  .module-heading b {
+    grid-column: 2 / 4;
+    grid-row: 2;
+    padding-right: 4px;
+  }
+
+  .module-toggle {
+    grid-column: 3;
+    grid-row: 1;
+    justify-self: end;
+  }
+}
+
+@media (max-width: 350px) {
+  .program-summary p {
+    min-height: 88px;
+    padding: 12px 8px;
+  }
+
+  .program-summary b {
+    font-size: 14px;
+  }
+
+  .program-module > summary {
+    grid-template-columns: 48px minmax(0, 1fr) 32px;
+    gap: 9px;
+    padding: 12px 10px;
+  }
+
+  .module-level {
+    width: 48px;
+    height: 52px;
+    font-size: 19px;
+  }
+
+  .module-heading b {
+    font-size: 18px;
+  }
+
+  .module-toggle i {
+    width: 30px;
+    height: 30px;
+  }
+}
+
 /* Calm Bauhaus hierarchy: neutral reading surfaces with sparse color accents. */
 :root {
   --border: 1px solid var(--line);
